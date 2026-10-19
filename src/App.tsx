@@ -73,7 +73,7 @@ export default function App() {
         </Routes>
       </main>
       <footer className="app-footer">
-        <p>׳³ֲ ׳³ג€˜׳³ֲ ׳³ג€ ׳³ג€˜׳³ֲ׳³ֲ׳³ֲ¦׳³ֲ¢׳³ג€¢׳³ֳ— React + TypeScript + Vite | ׳³ֲ׳³ג€˜׳³ג€¢׳³ֲ¡׳³ֲ¡ ׳³ֲ¢׳³ֲ Dog CEO API ׳ ֲֲֲ¾</p>
+        <p>נבנה באמצעות React + TypeScript + Vite | מבוסס על Dog CEO API 🐾</p>
       </footer>
     </div>
   );
