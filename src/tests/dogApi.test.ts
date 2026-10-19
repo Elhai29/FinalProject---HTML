@@ -3,15 +3,15 @@ import {
   fetchAllBreeds,
   fetchBreedImages,
   getBreedsForTab,
-  BreedsMap,
 } from '../services/dogApi';
+import type { BreedsMap } from '../services/dogApi';
 
 describe('dogApi TypeScript Service Tests', () => {
   beforeEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('fetchAllBreeds ׳³ֲ©׳³ג€¢׳³ֲ׳³ֲ£ ׳³ג€˜׳³ג€׳³ֲ¦׳³ֲ׳³ג€”׳³ג€ ׳³ֲ׳³ֳ— ׳³ֲ¨׳³ֲ©׳³ג„¢׳³ֲ׳³ֳ— ׳³ג€׳³ג€™׳³ג€“׳³ֲ¢׳³ג„¢׳³ֲ ׳³ֲ׳³ג€-API', async () => {
+  it('fetchAllBreeds שולף בהצלחה את רשימת הגזעים מה-API', async () => {
     const mockData: { message: BreedsMap; status: string } = {
       message: {
         boxer: [],
@@ -32,7 +32,7 @@ describe('dogApi TypeScript Service Tests', () => {
     expect(result).toEqual(mockData.message);
   });
 
-  it('fetchBreedImages ׳³ג€˜׳³ג€¢׳³ֲ ׳³ג€ ׳³ג€÷׳³ֳ—׳³ג€¢׳³ג€˜׳³ֳ— URL ׳³ֳ—׳³ֲ§׳³ג„¢׳³ֲ ׳³ג€ ׳³ֲ׳³ג€™׳³ג€“׳³ֲ¢ ׳³ג€¢׳³ֲ׳³ֳ—׳³ֳ—-׳³ג€™׳³ג€“׳³ֲ¢', async () => {
+  it('fetchBreedImages בונה כתובת URL תקינה לגזע ולתת-גזע', async () => {
     const mockImages = {
       message: ['https://images.dog.ceo/breeds/bulldog-french/1.jpg'],
       status: 'success',
@@ -50,7 +50,7 @@ describe('dogApi TypeScript Service Tests', () => {
     expect(images).toHaveLength(1);
   });
 
-  it('getBreedsForTab ׳³ֲ׳³ֲ¡׳³ֲ ׳³ֲ ׳³ג€™׳³ג€“׳³ֲ¢׳³ג„¢׳³ֲ ׳³ֲ׳³ג‚×׳³ג„¢ ׳³ֲ׳³ֲ©׳³ג€¢׳³ֲ ׳³ג„¢׳³ֳ—', () => {
+  it('getBreedsForTab מסנן גזעים לפי לשונית', () => {
     const sampleMap: BreedsMap = {
       boxer: [],
       pug: [],

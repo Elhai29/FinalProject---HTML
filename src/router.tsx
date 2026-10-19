@@ -31,6 +31,23 @@ export function BrowserRouter({ children }: { children: React.ReactNode }) {
   );
 }
 
+export function MemoryRouter({
+  initialEntries = ['/'],
+  children,
+}: {
+  initialEntries?: string[];
+  children: React.ReactNode;
+}) {
+  const [path, setPath] = useState<string>(initialEntries[0] || '/');
+  const navigate = (to: string) => setPath(to);
+
+  return (
+    <RouterContext.Provider value={{ path, navigate }}>
+      {children}
+    </RouterContext.Provider>
+  );
+}
+
 export function Routes({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
@@ -54,7 +71,6 @@ export function useNavigate() {
       context.navigate(to);
     } else {
       window.history.pushState({}, '', to);
-      window.location.href = to;
     }
   };
 }
